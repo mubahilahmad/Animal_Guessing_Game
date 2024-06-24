@@ -9,7 +9,7 @@
         android:id="@+id/textViewAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
         android:text="@string/textViewAppName"
         android:textColor="@color/darkgreen"
