@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">animalguessinggame</string>
+    <string name="textViewAppName">Animal Guessing Game</string>
+    <string name="textViewAnimalHint">Hint</string>
+    <string name="buttonHint">Get Hint!</string>
+    <string name="editTextEnterYourGuess">Type your guess here…</string>
+    <string name="buttonGuess">Solve!</string>
+    <string name="textViewScore">Score: 0</string>
+    <string name="textViewHintsCountLeft">Hints Left!</string>
+    <string name="textViewAttemptsCountLeft">Attempts Left!</string>
+    <string name="toastNoMoreHints">No more hints!</string>
+    <string name="toastCorrect">Correct!</string>
+    <string name="toastWrong">Wrong!</string>
+    <string name="hintsLeft">%d hints left!</string>
+    <string name="noMoreHints">No more hints!</string>
+    <string name="skip">Skip</string>
+    <string name="solveAttemptsLeft">%d solve attempts left!</string>
+    <string name="noMoreSolveAttempts">No more solve attempts!</string>
+    <string name="score">Score: %d</string>
+    <string name="select_number_of_animals">Select Number of Animals</string>
+    <string name="five_animals">5 Animals</string>
+    <string name="ten_animals">10 Animals</string>
+    <string name="twenty_animals">20 Animals</string>
+    <string name="thirty_animals">30 Animals</string>
+    <string name="forty_animals">40 Animals</string>
+    <string name="fifty_animals">50 Animals</string>
+    <string name="no_number_of_animals_selected">No number of Animals selected</string>
+    <string name="toastDontGiveUp">Never give up!</string>
+    <string name="finished">Done!</string>
+    <string name="score_area">Game Score</string>
+    <string name="score_label">Score:</string>
+    <string name="add_score">Add Score</string>
+    <string name="start_anew">Start Anew</string>
+    <string name="score_text">Score: %d</string>
+</resources>

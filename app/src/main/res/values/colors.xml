@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="lightgreen">#9AFE2E</color>
+    <color name="orange">#FF8000</color>
+    <color name="green">#01DF01</color>
+    <color name="red">#FF0000</color>
+    <color name="darkgreen">#38761d</color>
+    <color name="middel_green">#6aa84f</color>
+    <color name="grell">#82ff59</color>
+    <color name="yellow">#fff600</color>
+    <color name="status_bar_color">#DF0101</color>
+</resources>
+
