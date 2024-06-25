@@ -13,7 +13,7 @@
     <string name="toastWrong">Wrong!</string>
     <string name="hintsLeft">%d hints left!</string>
     <string name="noMoreHints">No more hints!</string>
-    <string name="skip">Skip</string>
+    <string name="skip">Next Animal!</string>
     <string name="solveAttemptsLeft">%d solve attempts left!</string>
     <string name="noMoreSolveAttempts">No more solve attempts!</string>
     <string name="score">Score: %d</string>
@@ -25,12 +25,23 @@
     <string name="forty_animals">40 Animals</string>
     <string name="fifty_animals">50 Animals</string>
     <string name="no_number_of_animals_selected">No number of Animals selected</string>
-    <string name="toastDontGiveUp">Never give up!</string>
+    <string name="toastDontGiveUp">Next Animal!</string>
     <string name="finished">Done!</string>
     <string name="score_area">Game Score</string>
-    <string name="score_label">Score:</string>
+    <string name="score_label">Reached Score:</string>
     <string name="add_score">Add Score</string>
     <string name="start_anew">Start Anew</string>
-    <string name="score_text">Score: %d</string>
-    <string name="score_saved">Score saved!</string>
+    <string name="error_starting_main_activity">Error starting MainActivity: %s</string>
+    <string name="error_retrieving_num_animals">Error retrieving NUM_ANIMALS: %s</string>
+    <string name="error_ending_game">Error ending game: %s</string>
+
+    <string name="score_text">Score: %1$d</string>
+    <string name="saved_score_text">Saved Score: %1$d</string>
+    <string name="score_saved">Score has been saved!</string>
+    <string name="error_starting_new_round">Error starting new round: %1$s</string>
+    <string name="error_initializing_score_activity">Error initializing ScoreActivity: %1$s</string>
+    <string name="editTextNote">Type your note here …</string>
+    <string name="textViewDataStore">Empty</string>
+    <string name="textViewNote">Save score under this note:</string>
+
 </resources>

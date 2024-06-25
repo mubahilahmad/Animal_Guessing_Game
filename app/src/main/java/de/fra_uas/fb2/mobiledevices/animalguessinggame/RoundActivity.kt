@@ -1,16 +1,16 @@
 package de.fra_uas.fb2.mobiledevices.animalguessinggame
 
+import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.Toast
 
 class RoundActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_round)
-
 
         val button5Animals = findViewById<Button>(R.id.button5Animals)
         val button10Animals = findViewById<Button>(R.id.button10Animals)
@@ -28,9 +28,14 @@ class RoundActivity : AppCompatActivity() {
     }
 
     private fun startMainActivity(numAnimals: Int) {
-        val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("NUM_ANIMALS", numAnimals)
-        startActivity(intent)
-        finish()
+        try {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("NUM_ANIMALS", numAnimals)
+            startActivity(intent)
+            finish()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(this, getString(R.string.error_starting_main_activity, e.message), Toast.LENGTH_LONG).show()
+        }
     }
 }

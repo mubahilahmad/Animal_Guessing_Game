@@ -1,18 +1,13 @@
 package de.fra_uas.fb2.mobiledevices.animalguessinggame
 
-import android.content.Context
+import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.intPreferencesKey
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,10 +42,17 @@ class MainActivity : AppCompatActivity() {
         skipButton = findViewById(R.id.buttonSkip)
         currentAnimalTextView = findViewById(R.id.textViewCurrentAnimal)
 
-        if (intent.hasExtra("NUM_ANIMALS")) {
-            numAnimals = intent.getIntExtra("NUM_ANIMALS", 0)
-        } else {
-            Toast.makeText(this, getString(R.string.no_number_of_animals_selected), Toast.LENGTH_SHORT).show()
+        try {
+            if (intent.hasExtra("NUM_ANIMALS")) {
+                numAnimals = intent.getIntExtra("NUM_ANIMALS", 0)
+            } else {
+                Toast.makeText(this, getString(R.string.no_number_of_animals_selected), Toast.LENGTH_SHORT).show()
+                finish()
+                return
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(this, getString(R.string.error_retrieving_num_animals, e.message), Toast.LENGTH_LONG).show()
             finish()
             return
         }
@@ -127,12 +129,27 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun endGame() {
-        savePoints(this, score)
-        val intent = Intent(this, ScoreActivity::class.java)
-        intent.putExtra("SCORE", score)
+    override fun onBackPressed() {
+        super.onBackPressed()
+        navigateToRoundActivity()
+    }
+
+    private fun navigateToRoundActivity() {
+        val intent = Intent(this, RoundActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun endGame() {
+        try {
+            val intent = Intent(this, ScoreActivity::class.java)
+            intent.putExtra("SCORE", score)
+            startActivity(intent)
+            finish()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(this, getString(R.string.error_ending_game, e.message), Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun updateHint() {
@@ -178,17 +195,5 @@ class MainActivity : AppCompatActivity() {
         hintButton.isEnabled = true
         hintButton.alpha = 1.0f
         updateHintCount()
-    }
-
-    private fun savePoints(context: Context, points: Int) {
-        runBlocking {
-            context.dataStore.edit { preferences ->
-                preferences[POINTS_KEY] = points
-            }
-        }
-    }
-
-    companion object {
-        val POINTS_KEY = intPreferencesKey("user_points")
     }
 }
