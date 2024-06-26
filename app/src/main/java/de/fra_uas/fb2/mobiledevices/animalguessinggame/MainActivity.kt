@@ -11,15 +11,15 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var animalHint: TextView
-    private lateinit var hintButton: Button
-    private lateinit var hintsCount: TextView
-    private lateinit var guessInput: EditText
-    private lateinit var guessButton: Button
-    private lateinit var attemptsCount: TextView
-    private lateinit var scoreView: TextView
-    private lateinit var skipButton: Button
-    private lateinit var currentAnimalTextView: TextView
+    private lateinit var textViewAnimalHint: TextView // das ist neu
+    private lateinit var buttonHint: Button // das ist neu
+    private lateinit var textViewHintsCountLeft: TextView // das ist neu
+    private lateinit var editTextEnterYourGuess: EditText // das ist neu
+    private lateinit var buttonGuess: Button // das ist neu
+    private lateinit var textViewAttemptsCountLeft: TextView // das ist neu
+    private lateinit var textViewScore: TextView // das ist neu
+    private lateinit var buttonSkip: Button // das ist neu
+    private lateinit var textViewCurrentAnimal: TextView // das ist neu
 
     private var currentAnimalIndex = 0
     private var hintIndex = 0
@@ -32,15 +32,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        animalHint = findViewById(R.id.textViewAnimalHint)
-        hintButton = findViewById(R.id.buttonHint)
-        hintsCount = findViewById(R.id.textViewHintsCountLeft)
-        guessInput = findViewById(R.id.editTextEnterYourGuess)
-        guessButton = findViewById(R.id.buttonGuess)
-        attemptsCount = findViewById(R.id.textViewAttemptsCountLeft)
-        scoreView = findViewById(R.id.textViewScore)
-        skipButton = findViewById(R.id.buttonSkip)
-        currentAnimalTextView = findViewById(R.id.textViewCurrentAnimal)
+        textViewAnimalHint = findViewById(R.id.textViewAnimalHint) // das ist neu
+        buttonHint = findViewById(R.id.buttonHint) // das ist neu
+        textViewHintsCountLeft = findViewById(R.id.textViewHintsCountLeft) // das ist neu
+        editTextEnterYourGuess = findViewById(R.id.editTextEnterYourGuess) // das ist neu
+        buttonGuess = findViewById(R.id.buttonGuess) // das ist neu
+        textViewAttemptsCountLeft = findViewById(R.id.textViewAttemptsCountLeft) // das ist neu
+        textViewScore = findViewById(R.id.textViewScore) // das ist neu
+        buttonSkip = findViewById(R.id.buttonSkip) // das ist neu
+        textViewCurrentAnimal = findViewById(R.id.textViewCurrentAnimal) // das ist neu
 
         try {
             if (intent.hasExtra("NUM_ANIMALS")) {
@@ -63,10 +63,10 @@ class MainActivity : AppCompatActivity() {
         updateHintCount()
         updateAttemptsCount()
 
-        hintButton.setOnClickListener {
+        buttonHint.setOnClickListener {
             hintIndex++
             if (hintIndex < animalsToPlay[currentAnimalIndex].hints.size) {
-                animalHint.text = animalsToPlay[currentAnimalIndex].hints[hintIndex]
+                textViewAnimalHint.text = animalsToPlay[currentAnimalIndex].hints[hintIndex]
                 updateHintCount()
             } else {
                 disableHintButton()
@@ -74,20 +74,20 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        guessButton.setOnClickListener {
-            val guess = guessInput.text.toString()
+        buttonGuess.setOnClickListener {
+            val guess = editTextEnterYourGuess.text.toString()
             if (guess.equals(animalsToPlay[currentAnimalIndex].name, ignoreCase = true)) {
                 val pointsFromHints = hintIndex
                 val pointsFromAttempts = guessAttempts
                 val pointsEarned = 13 - pointsFromHints - pointsFromAttempts
                 score += pointsEarned
-                scoreView.text = getString(R.string.score, score)
+                textViewScore.text = getString(R.string.score, score)
                 currentAnimalIndex++
                 if (currentAnimalIndex < animalsToPlay.size) {
                     hintIndex = 0
                     guessAttempts = 0
                     updateHint()
-                    guessInput.text.clear()
+                    editTextEnterYourGuess.text.clear()
                     resetGuessButton()
                     resetHintButton()
                     updateHintCount()
@@ -104,24 +104,24 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this, getString(R.string.toastWrong), Toast.LENGTH_SHORT).show()
                     } else {
                         disableGuessButton()
-                        skipButton.visibility = View.VISIBLE
+                        buttonSkip.visibility = View.VISIBLE
                     }
                 }
             }
         }
 
-        skipButton.setOnClickListener {
+        buttonSkip.setOnClickListener {
             currentAnimalIndex++
             if (currentAnimalIndex < animalsToPlay.size) {
                 hintIndex = 0
                 guessAttempts = 0
                 updateHint()
-                guessInput.text.clear()
+                editTextEnterYourGuess.text.clear()
                 resetGuessButton()
                 resetHintButton()
                 updateHintCount()
                 updateAttemptsCount()
-                skipButton.visibility = View.GONE
+                buttonSkip.visibility = View.GONE
                 Toast.makeText(this, getString(R.string.toastDontGiveUp), Toast.LENGTH_SHORT).show()
             } else {
                 endGame()
@@ -153,47 +153,47 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateHint() {
-        animalHint.text = animalsToPlay[currentAnimalIndex].hints[hintIndex]
-        currentAnimalTextView.text = animalsToPlay[currentAnimalIndex].name
+        textViewAnimalHint.text = animalsToPlay[currentAnimalIndex].hints[hintIndex] // das ist neu
+        textViewCurrentAnimal.text = animalsToPlay[currentAnimalIndex].name // das ist neu
     }
 
     private fun updateHintCount() {
-        val hintsLeft = animalsToPlay[currentAnimalIndex].hints.size - hintIndex
+        val hintsLeft = animalsToPlay[currentAnimalIndex].hints.size - hintIndex // das ist neu
         if (hintsLeft > 0) {
-            hintsCount.text = getString(R.string.hintsLeft, hintsLeft)
+            textViewHintsCountLeft.text = getString(R.string.hintsLeft, hintsLeft) // das ist neu
         } else {
-            hintsCount.text = getString(R.string.noMoreHints)
+            textViewHintsCountLeft.text = getString(R.string.noMoreHints) // das ist neu
         }
     }
 
     private fun updateAttemptsCount() {
-        val attemptsLeft = 3 - guessAttempts
+        val attemptsLeft = 3 - guessAttempts // das ist neu
         if (attemptsLeft > 0) {
-            attemptsCount.text = getString(R.string.solveAttemptsLeft, attemptsLeft)
+            textViewAttemptsCountLeft.text = getString(R.string.solveAttemptsLeft, attemptsLeft) // das ist neu
         } else {
-            attemptsCount.text = getString(R.string.noMoreSolveAttempts)
+            textViewAttemptsCountLeft.text = getString(R.string.noMoreSolveAttempts) // das ist neu
         }
     }
 
     private fun disableGuessButton() {
-        guessButton.isEnabled = false
-        guessButton.alpha = 0.5f
+        buttonGuess.isEnabled = false // das ist neu
+        buttonGuess.alpha = 0.5f // das ist neu
     }
 
     private fun resetGuessButton() {
-        guessButton.isEnabled = true
-        guessButton.alpha = 1.0f
+        buttonGuess.isEnabled = true // das ist neu
+        buttonGuess.alpha = 1.0f // das ist neu
     }
 
     private fun disableHintButton() {
-        hintButton.isEnabled = false
-        hintsCount.text = getString(R.string.noMoreHints)
-        hintButton.alpha = 0.5f
+        buttonHint.isEnabled = false // das ist neu
+        textViewHintsCountLeft.text = getString(R.string.noMoreHints) // das ist neu
+        buttonHint.alpha = 0.5f // das ist neu
     }
 
     private fun resetHintButton() {
-        hintButton.isEnabled = true
-        hintButton.alpha = 1.0f
+        buttonHint.isEnabled = true // das ist neu
+        buttonHint.alpha = 1.0f // das ist neu
         updateHintCount()
     }
 }

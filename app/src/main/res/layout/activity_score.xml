@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:gravity="center"
-        android:text="@string/score_area"
+        android:text="@string/textViewScoreArea"
         android:textColor="@color/darkgreen"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -22,11 +22,11 @@
         tools:ignore="TextSizeCheck" />
 
     <TextView
-        android:id="@+id/textViewScore"
+        android:id="@+id/textViewScoreTwo"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="@string/score_label"
+        android:text="@string/textViewScoreTwo"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +39,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="90dp"
         android:backgroundTint="@color/orange"
-        android:text="@string/start_anew"
+        android:text="@string/buttonStartAnew"
         android:textColor="#000000"
         android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +52,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="25dp"
         android:backgroundTint="@color/grell"
-        android:text="@string/add_score"
+        android:text="@string/buttonAddScore"
         android:textColor="#000000"
         android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,6 +102,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewScore" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewScoreTwo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

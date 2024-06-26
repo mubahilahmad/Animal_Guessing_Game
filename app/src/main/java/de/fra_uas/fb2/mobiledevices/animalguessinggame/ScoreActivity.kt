@@ -20,11 +20,11 @@ val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "ga
 
 class ScoreActivity : AppCompatActivity() {
 
-    private lateinit var scoreTextView: TextView
-    private lateinit var addScoreButton: Button
-    private lateinit var startAnewButton: Button
-    private lateinit var dataStoreTextView: TextView
-    private lateinit var noteEditText: EditText
+    private lateinit var textViewScoreTwo: TextView
+    private lateinit var buttonAddScore: Button
+    private lateinit var buttonStartAnew: Button
+    private lateinit var textViewDataStore: TextView
+    private lateinit var editTextNote: EditText
 
     companion object {
         val SCORE_KEY = stringPreferencesKey("user_score")
@@ -35,15 +35,15 @@ class ScoreActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_score)
 
-        scoreTextView = findViewById(R.id.textViewScore)
-        addScoreButton = findViewById(R.id.buttonAddScore)
-        startAnewButton = findViewById(R.id.buttonStartAnew)
-        dataStoreTextView = findViewById(R.id.textViewDataStore)
-        noteEditText = findViewById(R.id.editTextNote)
+        textViewScoreTwo = findViewById(R.id.textViewScoreTwo)
+        buttonAddScore = findViewById(R.id.buttonAddScore)
+        buttonStartAnew = findViewById(R.id.buttonStartAnew)
+        textViewDataStore = findViewById(R.id.textViewDataStore)
+        editTextNote = findViewById(R.id.editTextNote)
 
-        noteEditText.setOnFocusChangeListener { _, hasFocus ->
+        editTextNote.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
-                noteEditText.setText("")
+                editTextNote.setText("")
             }
         }
 
@@ -52,22 +52,22 @@ class ScoreActivity : AppCompatActivity() {
             val savedData = getSavedData(this)
 
             // Display the score from MainActivity
-            scoreTextView.text = getString(R.string.score_text, score)
+            textViewScoreTwo.text = getString(R.string.score_text, score)
 
             // Display the saved data from DataStore
-            dataStoreTextView.text = savedData
+            textViewDataStore.text = savedData
 
-            addScoreButton.setOnClickListener {
-                val note = noteEditText.text.toString()
+            buttonAddScore.setOnClickListener {
+                val note = editTextNote.text.toString()
                 saveData(this, score, note)
                 Toast.makeText(this, getString(R.string.score_saved), Toast.LENGTH_SHORT).show()
 
                 // Update the DataStore TextView with the new saved data
                 val newSavedData = getSavedData(this)
-                dataStoreTextView.text = newSavedData
+                textViewDataStore.text = newSavedData
             }
 
-            startAnewButton.setOnClickListener {
+            buttonStartAnew.setOnClickListener {
                 try {
                     val intent = Intent(this, RoundActivity::class.java)
                     startActivity(intent)
