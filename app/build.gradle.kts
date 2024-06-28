@@ -36,7 +36,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -46,4 +45,13 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.constraintlayout)
     implementation (libs.androidx.datastore.preferences)
+    implementation (libs.gson)
+    /* implementation 'com.google.code.gson:gson:2.8.8' */
 }
+
+
+
+
+
+
+

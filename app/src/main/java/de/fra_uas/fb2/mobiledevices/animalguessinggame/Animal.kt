@@ -1,9 +1,9 @@
 package de.fra_uas.fb2.mobiledevices.animalguessinggame
 
 data class Animal(
-    val name: String,
-    val hints: List<String>
-) {
+    override val name: String,
+    override val hints: List<String>
+) : AnimalInterface {
     companion object {
         val animals = listOf(
             Animal("Lion", listOf("Color: Yellowish-brown", "Habitat: Lives in Africa", "Diet: Eats meat (Carnivore)", "Size: Up to 3 meters long", "Weight: 120 to 190 kg", "Roars loudly", "Has a mane", "Very fast runner", "Known as the King of the Jungle", "Lives in groups called prides")),

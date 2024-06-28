@@ -1,33 +1,33 @@
 <resources>
     <string name="app_name">animalguessinggame</string>
-    <!-- activity_round.xml -->
-    <string name="textViewTitle">Select Number of Animals</string>
+    <!-- activity_round -->
+    <string name="textViewTitle">Choose And Play</string>
     <string name="button5Animals">5 Animals</string>
+    <string name="button5Predators">5 Predators</string>
     <string name="button10Animals">10 Animals</string>
+    <string name="button10Predators">10 Predators</string>
     <string name="button20Animals">20 Animals</string>
-    <string name="button30Animals">30 Animals</string>
-    <string name="button40Animals">40 Animals</string>
-    <string name="button50Animals">50 Animals</string>
-    <!-- RoundActivity.kt -->
-    <string name="no_number_of_animals_selected">No number of Animals selected</string>
-    <!-- toast der RoundActivity.kt -->
+    <string name="button20Predators">20 Predators</string>
+    <!-- roundactivity -->
+    <string name="no_number_of_animals_selected">No number selected</string>
+    <!-- toast roundactivity -->
     <string name="error_starting_main_activity">Error starting MainActivity: %s</string>
-    <!-- activity_main.xml -->
+    <!-- activity_main -->
     <string name="textViewAppName">Animal Guessing Game</string>
     <string name="textViewAnimalHint">Hint</string>
     <string name="buttonHint">Get Hint!</string>
-    <string name="editTextEnterYourGuess">Type your guess here…</string>
+    <string name="editTextEnterYourGuess">Type your guess here</string>
     <string name="buttonGuess">Solve!</string>
     <string name="textViewScore">Score: 0</string>
     <string name="textViewHintsCountLeft">Hints Left!</string>
     <string name="textViewAttemptsCountLeft">Attempts Left!</string>
-    <string name="buttonSkip">Next Animal!</string>
+    <string name="buttonSkip">Skip!</string>
     <string name="textViewCurrentAnimal">TextView</string>
-    <!-- MainActivity.kt -->
+    <!-- mainactivity -->
     <string name="hintsLeft">%d hints left!</string>
     <string name="solveAttemptsLeft">%d solve attempts left!</string>
     <string name="score">Score: %d</string>
-    <!-- toast der MainActivity.kt -->
+    <!-- toast mainactivity -->
     <string name="toastNoMoreHints">No more hints!</string>
     <string name="toastCorrect">Correct!</string>
     <string name="toastWrong">Wrong!</string>
@@ -35,21 +35,30 @@
     <string name="noMoreSolveAttempts">No more solve attempts!</string>
     <string name="toastDontGiveUp">Next Animal!</string>
     <string name="finished">Done!</string>
-    <string name="error_retrieving_num_animals">Error retrieving NUM_ANIMALS: %s</string>
+    <string name="error_loading_num_animals">Error loading NUM_ANIMALS: %s</string>
     <string name="error_ending_game">Error ending game: %s</string>
-    <!-- activity_score.xml -->
+    <!-- activity_score -->
     <string name="textViewScoreArea">Game Score</string>
     <string name="textViewScoreTwo">Reached Score:</string>
     <string name="buttonAddScore">Add Score</string>
     <string name="buttonStartAnew">Start Anew</string>
-    <string name="textViewDataStore">Empty</string>
     <string name="editTextNote">Type your note here …</string>
     <string name="textViewNote">Save score under this note:</string>
-    <!-- ScoreActivity.kt -->
+    <!-- scoreactivity -->
     <string name="score_text">Score: %1$d</string>
     <string name="saved_score_text">Saved Score: %1$d</string>
     <string name="score_saved">Score has been saved!</string>
-    <!-- toast der ScoreActivity.kt -->
+    <string name="EmptyString" />
+    <!-- toast der scoreactivity -->
     <string name="error_starting_new_round">Error starting new round: %1$s</string>
     <string name="error_initializing_score_activity">Error initializing ScoreActivity: %1$s</string>
+    <string name="note_empty_warning">Please enter a note before saving.</string>
+    <string name="buttonProfile">My Profile</string>
+    <!-- activity_profile -->
+    <string name="textViewTitleProfile">My Profile</string>
+    <string name="textViewEntries">My last entries:</string>
+    <!-- profileactivity -->
+    <string name="note">Note</string>
+    <string name="score2">Score</string>
+    <string name="empty">Empty</string>
 </resources>

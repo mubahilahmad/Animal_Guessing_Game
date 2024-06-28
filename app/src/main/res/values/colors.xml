@@ -11,5 +11,6 @@
     <color name="grell">#82ff59</color>
     <color name="yellow">#fff600</color>
     <color name="status_bar_color">#DF0101</color>
+    <color name="colorOnPrimary">#FFFFFFFF</color>
 </resources>
 
