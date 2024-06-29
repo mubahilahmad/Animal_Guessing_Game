@@ -5,7 +5,7 @@ Animal Guessing Game is a fun and interactive Android game where players guess t
 
 ## Features
 
-- Multiple game modes: guess animals or predators (specific animals).
+- Multiple game modes: guess animals or predators (specific animals for predator lovers).
 - Hints to help you guess the animal.
 - Tracks scores and keeps a history of the last 5 scores.
 - User-friendly interface with a playful design.
@@ -16,7 +16,7 @@ To get started with the Animal Guessing Game, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/mubahilahmad/Animal_Guessing_Game.git
+   git clone https://github.com/mubahilahmad/animal_guessing_game.git
    ```
 2. **Open the project in Android Studio:**
    - Select `File -> Open` and choose the cloned repository folder.
