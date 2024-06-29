@@ -100,28 +100,23 @@ Have fun playing :-)
 
 ## Screenshots
 
-RoundActivity (First Activity)
+RoundActivity (First Activity):
 
 ![1_RoundActivity_01](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/2d913061-2038-4283-b315-d74e52d2af2d)
 
 
-MainActivity (Second Activity)
+MainActivity (Second Activity):
 
 ![2_MainActivity_01](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/5c5ef6bd-3edf-4248-b394-501c35298660)
 
 ![2_MainActivity_02](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/7e137ddf-56db-4dfd-bb6b-5d72fef56554)
 
 
-ScoreActivity (Third Activity)
+ScoreActivity (Third Activity):
 
 ![3_ScoreActivity_01](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/69151c88-5b32-44c1-81a6-142eb1e8e34f)
 
 
-ProfileActivity (Last Activity)
+ProfileActivity (Last Activity):
 
 ![4_ProfileActivity_01](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/a248c390-aad1-4d9e-afd5-9823ab9a3eaf)
-![03_ScoreActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/b89c64b1-199e-4991-ad5a-4f54a2ac3f15)
-
-
-ProfileActivity (Last Activity)
-![Screenshot_20240629_203422](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/5f9bbde9-d5ff-40b2-a5ae-b674088d0714)
