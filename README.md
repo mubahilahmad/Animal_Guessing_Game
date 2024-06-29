@@ -1,15 +1,31 @@
-```markdown
 # Animal Guessing Game
 
-Animal Guessing Game is a fun and interactive Android game where players guess the names of animals based on hints.
-It features different modes, including a predator mode for more challenging gameplay.
+The Animal Guessing Game is an engaging and educational app where the player must guess a randomly selected animal. 
+It's perfect for group fun or individual entertainment, combining elements of learning and play.
 
-## Features
+## How the App Works
 
-- Multiple game modes: guess animals or predators (specific animals for predator lovers).
-- Hints to help you guess the animal.
-- Tracks scores and keeps a history of the last 5 scores.
-- User-friendly interface with a playful design.
+### Game Mechanics
+
+- **Random Animal Selection**: The app randomly selects an animal from a database.
+- **Player's Objective**: The human player must guess the animal.
+
+### Player Options
+
+- **Get Hint**: Players can request up to 10 hints per animal to help identify the animal.
+- **Solve**: Players can attempt to solve up to 3 times per round to guess the animal correctly.
+
+### Data and Hints
+
+- **Extensive Animal Collection**: The app includes data for at least 50 different animals (and has an additional 50 predators).
+- **Detailed Hints**: Each animal comes with 10 unique hints focusing on various characteristics like color, habitat, diet, and size.
+
+### Gameplay
+
+- **Multiple Guessing Rounds**: The game is designed to be entertaining with multiple rounds of guessing.
+- **Scoring System**: Players earn points based on the number of hints and attempts used. Specifically, 
+     a successful guess scores 13 - n - m points, where 'n' is the number of hints used, and 'm' is the number of guessing attempts.
+- **Highscore List**: The app stores the results and displays them in a highscore list to track progress and compete with friends.
 
 ## Installation
 
