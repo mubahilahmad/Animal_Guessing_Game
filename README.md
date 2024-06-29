@@ -1,7 +1,8 @@
 ```markdown
 # Animal Guessing Game
 
-Animal Guessing Game is a fun and interactive Android game where players guess the names of animals based on hints. It features different modes, including a predator mode for more challenging gameplay.
+Animal Guessing Game is a fun and interactive Android game where players guess the names of animals based on hints.
+It features different modes, including a predator mode for more challenging gameplay.
 
 ## Features
 
@@ -80,3 +81,22 @@ Defines the layout for `ProfileActivity` where the user's past scores are displa
 The app uses Android's DataStore for saving the user's score history. Scores are stored as JSON strings and only the last 5 entries are kept.
 
 Have fun playing :-)
+
+
+Screenshots
+
+RoundActivity (First Activity)
+![1_RoundActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/20ef601e-61f1-486c-9e04-7c5f804cdc46)
+
+
+MainActivity (Second Activity)
+![01_MainActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/987d664c-060d-4d95-aa1a-a922aeb58a51)
+![03_MainActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/19b5dd0b-3154-499d-b1f0-70fa74b7e2c0)
+
+ScoreActivity (Third Activity)
+![01_ScoreActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/4f93e95e-2673-4aaa-84e9-488140604af5)
+![02_ScoreActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/aa2719ae-e8a9-44c3-a38b-040c48067dae)
+![03_ScoreActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/f5753694-f123-475d-95bb-5275c7fbce9e)
+
+ProfileActivity (Last Activity)
+![Screenshot_20240629_203422](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/554d907d-6875-4a39-b33d-bf4482671cb9)
