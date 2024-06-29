@@ -13,7 +13,7 @@
         android:gravity="center"
         android:text="@string/textViewTitleProfile"
         android:textColor="@color/darkgreen"
-        android:textSize="30sp"
+        android:textSize="33sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">animalguessinggame</string>
+    <string name="app_name">animal_guessing_game</string>
     <!-- activity_round -->
     <string name="textViewTitle">Choose And Play</string>
     <string name="button5Animals">5 Animals</string>

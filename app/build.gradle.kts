@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "de.fra_uas.fb2.mobiledevices.animalguessinggame"
+    namespace = "com.example.animal_guessing_game"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "de.fra_uas.fb2.mobiledevices.animalguessinggame"
+        applicationId = "com.example.animal_guessing_game"
         minSdk = 28
         targetSdk = 34
         versionCode = 1
@@ -46,7 +46,6 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation (libs.androidx.datastore.preferences)
     implementation (libs.gson)
-    /* implementation 'com.google.code.gson:gson:2.8.8' */
 }
 
 

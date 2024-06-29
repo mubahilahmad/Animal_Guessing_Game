@@ -1,4 +1,5 @@
-package de.fra_uas.fb2.mobiledevices.animalguessinggame
+package com.example.animal_guessing_game
+
 
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
@@ -64,7 +65,8 @@ class ScoreActivity : AppCompatActivity() {
                     saveData(this, score, noteText)
                     Toast.makeText(this, getString(R.string.score_saved), Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this, getString(R.string.note_empty_warning), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.note_empty_warning), Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
 
@@ -75,7 +77,11 @@ class ScoreActivity : AppCompatActivity() {
                     finish()
                 } catch (e: Exception) {
                     e.printStackTrace()
-                    Toast.makeText(this, getString(R.string.error_starting_new_round, e.message), Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        this,
+                        getString(R.string.error_starting_new_round, e.message),
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
             }
 
@@ -86,7 +92,11 @@ class ScoreActivity : AppCompatActivity() {
 
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(this, getString(R.string.error_initializing_score_activity, e.message), Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                this,
+                getString(R.string.error_initializing_score_activity, e.message),
+                Toast.LENGTH_LONG
+            ).show()
             finish()
         }
     }
@@ -111,9 +121,10 @@ class ScoreActivity : AppCompatActivity() {
         runBlocking {
             context.dataStore.edit { preferences ->
                 val entriesJson = preferences[ENTRIES_KEY] ?: "[]"
-                val entries: MutableList<ScoreEntry> = Gson().fromJson(entriesJson, Array<ScoreEntry>::class.java).toMutableList()
-                entries.add(0, entry) // Add new entry at the beginning
-                if (entries.size > 5) entries.removeAt(5) // Keep only the last 5 entries
+                val entries: MutableList<ScoreEntry> =
+                    Gson().fromJson(entriesJson, Array<ScoreEntry>::class.java).toMutableList()
+                entries.add(0, entry)
+                if (entries.size > 5) entries.removeAt(5)
                 preferences[ENTRIES_KEY] = Gson().toJson(entries)
             }
         }

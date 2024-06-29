@@ -1,4 +1,5 @@
-package de.fra_uas.fb2.mobiledevices.animalguessinggame
+package com.example.animal_guessing_game
+
 
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
@@ -13,11 +14,11 @@ class RoundActivity : AppCompatActivity() {
         setContentView(R.layout.activity_round)
 
         val button5Animals = findViewById<Button>(R.id.button5Animals)
-        val button5Predators = findViewById<Button>(R.id.button5Predators) // Neu hinzugefügt
-        val button10Animals = findViewById<Button>(R.id.button10Animals) // Geändert
-        val button10Predators = findViewById<Button>(R.id.button10Predators) // Neu hinzugefügt
-        val button20Animals = findViewById<Button>(R.id.button20Animals) // Geändert
-        val button20Predators = findViewById<Button>(R.id.button20Predators) // Neu hinzugefügt
+        val button5Predators = findViewById<Button>(R.id.button5Predators)
+        val button10Animals = findViewById<Button>(R.id.button10Animals)
+        val button10Predators = findViewById<Button>(R.id.button10Predators)
+        val button20Animals = findViewById<Button>(R.id.button20Animals)
+        val button20Predators = findViewById<Button>(R.id.button20Predators)
 
         button5Animals.setOnClickListener { startMainActivity(5, false) }
         button5Predators.setOnClickListener { startMainActivity(5, true) }
@@ -36,7 +37,11 @@ class RoundActivity : AppCompatActivity() {
             finish()
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(this, getString(R.string.error_starting_main_activity, e.message), Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                this,
+                getString(R.string.error_starting_main_activity, e.message),
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 }

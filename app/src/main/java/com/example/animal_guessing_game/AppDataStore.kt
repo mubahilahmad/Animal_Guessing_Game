@@ -1,4 +1,5 @@
-package de.fra_uas.fb2.mobiledevices.animalguessinggame
+package com.example.animal_guessing_game
+
 
 import android.content.Context
 import androidx.datastore.core.DataStore

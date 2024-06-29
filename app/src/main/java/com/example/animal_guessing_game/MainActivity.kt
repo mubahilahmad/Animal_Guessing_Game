@@ -1,4 +1,5 @@
-package de.fra_uas.fb2.mobiledevices.animalguessinggame
+package com.example.animal_guessing_game
+
 
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
@@ -19,16 +20,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var textViewAttemptsCountLeft: TextView
     private lateinit var textViewScore: TextView
     private lateinit var buttonSkip: Button
-    private lateinit var textViewCurrentAnimal: TextView
-    private lateinit var textViewAppName: TextView // Das hier ist neu
+    private lateinit var textViewAppName: TextView
 
     private var currentAnimalIndex = 0
     private var hintIndex = 0
     private var guessAttempts = 0
     private var score = 0
     private var numAnimals = 0
-    private var isPredatorMode = false // Das hier ist neu
-    private var animalsToPlay = listOf<AnimalInterface>() // Das hier ist neu
+    private var isPredatorMode = false
+    private var animalsToPlay = listOf<AnimalInterface>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,8 +42,7 @@ class MainActivity : AppCompatActivity() {
         textViewAttemptsCountLeft = findViewById(R.id.textViewAttemptsCountLeft)
         textViewScore = findViewById(R.id.textViewScore)
         buttonSkip = findViewById(R.id.buttonSkip)
-        textViewCurrentAnimal = findViewById(R.id.textViewCurrentAnimal)
-        textViewAppName = findViewById(R.id.textViewAppName) // Das hier ist neu
+        textViewAppName = findViewById(R.id.textViewAppName)
 
         val defaultText = getString(R.string.editTextEnterYourGuess)
 
@@ -62,21 +61,29 @@ class MainActivity : AppCompatActivity() {
         try {
             if (intent.hasExtra("NUM_ANIMALS")) {
                 numAnimals = intent.getIntExtra("NUM_ANIMALS", 0)
-                isPredatorMode = intent.getBooleanExtra("PREDATOR_MODE", false) // Das hier ist neu
-                updateAppName() // Das hier ist neu
+                isPredatorMode = intent.getBooleanExtra("PREDATOR_MODE", false)
+                updateAppName()
             } else {
-                Toast.makeText(this, getString(R.string.no_number_of_animals_selected), Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    getString(R.string.no_number_of_animals_selected),
+                    Toast.LENGTH_SHORT
+                ).show()
                 finish()
                 return
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(this, getString(R.string.error_loading_num_animals, e.message), Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                this,
+                getString(R.string.error_loading_num_animals, e.message),
+                Toast.LENGTH_LONG
+            ).show()
             finish()
             return
         }
 
-        animalsToPlay = if (isPredatorMode) { // Das hier ist neu
+        animalsToPlay = if (isPredatorMode) {
             Predator.predators.shuffled().take(numAnimals).map { predator ->
                 predator.copy(hints = predator.hints.shuffled())
             }
@@ -97,7 +104,8 @@ class MainActivity : AppCompatActivity() {
                 updateHintCount()
             } else {
                 disableHintButton()
-                Toast.makeText(this, getString(R.string.toastNoMoreHints), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.toastNoMoreHints), Toast.LENGTH_SHORT)
+                    .show()
             }
         }
 
@@ -111,7 +119,7 @@ class MainActivity : AppCompatActivity() {
                 score += pointsEarned
                 textViewScore.text = getString(R.string.score, score)
                 currentAnimalIndex++
-                updateAppName() // Das hier ist neu
+                updateAppName()
                 editTextEnterYourGuess.setText(defaultText)
                 if (currentAnimalIndex < animalsToPlay.size) {
                     hintIndex = 0
@@ -122,7 +130,8 @@ class MainActivity : AppCompatActivity() {
                     resetHintButton()
                     updateHintCount()
                     updateAttemptsCount()
-                    Toast.makeText(this, getString(R.string.toastCorrect), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.toastCorrect), Toast.LENGTH_SHORT)
+                        .show()
                 } else {
                     endGame()
                 }
@@ -131,7 +140,8 @@ class MainActivity : AppCompatActivity() {
                     guessAttempts++
                     updateAttemptsCount()
                     if (guessAttempts < 3) {
-                        Toast.makeText(this, getString(R.string.toastWrong), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getString(R.string.toastWrong), Toast.LENGTH_SHORT)
+                            .show()
                     } else {
                         disableGuessButton()
                         buttonSkip.visibility = View.VISIBLE
@@ -143,7 +153,7 @@ class MainActivity : AppCompatActivity() {
 
         buttonSkip.setOnClickListener {
             currentAnimalIndex++
-            updateAppName() // Das hier ist neu
+            updateAppName()
             if (currentAnimalIndex < animalsToPlay.size) {
                 hintIndex = 0
                 guessAttempts = 0
@@ -190,13 +200,16 @@ class MainActivity : AppCompatActivity() {
             finish()
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(this, getString(R.string.error_ending_game, e.message), Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                this,
+                getString(R.string.error_ending_game, e.message),
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 
     private fun updateHint() {
         textViewAnimalHint.text = animalsToPlay[currentAnimalIndex].hints[hintIndex]
-        textViewCurrentAnimal.text = animalsToPlay[currentAnimalIndex].name
     }
 
     private fun updateHintCount() {
