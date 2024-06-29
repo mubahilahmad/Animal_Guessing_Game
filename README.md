@@ -119,4 +119,4 @@ ScoreActivity (Third Activity):
 
 ProfileActivity (Last Activity):
 
-![4_ProfileActivity_01](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/a248c390-aad1-4d9e-afd5-9823ab9a3eaf)
+![4_ProfileActivity_01](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/81b4f5f7-e28f-405a-92e7-6c6487d0e296)
