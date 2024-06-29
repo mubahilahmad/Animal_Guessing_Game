@@ -61,7 +61,7 @@ Displays the last 5 scores saved by the user.
 ### `manifest.xml`
 Configures the app’s activities and metadata.
 
-### Layouts
+### Layouts (My layout is especially suitable for the Pixel 8)
 
 #### `activity_round.xml`
 Defines the layout for `RoundActivity` where the user selects the number of animals or predators to guess.
