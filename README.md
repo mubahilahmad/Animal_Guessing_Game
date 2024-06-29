@@ -93,26 +93,27 @@ Defines the layout for `ScoreActivity` where the final score is displayed, and t
 Defines the layout for `ProfileActivity` where the user's past scores are displayed.
 
 ## Data Storage
-
 The app uses Android's DataStore for saving the user's score history. Scores are stored as JSON strings and only the last 5 entries are kept.
 
 Have fun playing :-)
 
 
-Screenshots
+## Screenshots
 
 RoundActivity (First Activity)
-![1_RoundActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/20ef601e-61f1-486c-9e04-7c5f804cdc46)
-
+![1_RoundActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/4fb0b8d0-08af-419d-b9e3-555bd02c8364)
 
 MainActivity (Second Activity)
-![01_MainActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/987d664c-060d-4d95-aa1a-a922aeb58a51)
-![03_MainActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/19b5dd0b-3154-499d-b1f0-70fa74b7e2c0)
+![01_MainActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/43edd61c-c1a5-4634-bb7b-d4cef698b67a)
+![03_MainActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/e93eca38-9bbc-45f1-ae9e-2a2524919470)
+![04_MainActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/71587e58-e57b-4962-bf77-a3f3e0b90fa7)
+
 
 ScoreActivity (Third Activity)
-![01_ScoreActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/4f93e95e-2673-4aaa-84e9-488140604af5)
-![02_ScoreActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/aa2719ae-e8a9-44c3-a38b-040c48067dae)
-![03_ScoreActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/f5753694-f123-475d-95bb-5275c7fbce9e)
+![01_ScoreActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/ee4d20d8-2eac-496a-aba8-20e5e6804b38)
+![02_ScoreActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/d5506676-b858-48ba-982e-07fa73896a93)
+![03_ScoreActivity](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/b89c64b1-199e-4991-ad5a-4f54a2ac3f15)
+
 
 ProfileActivity (Last Activity)
-![Screenshot_20240629_203422](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/554d907d-6875-4a39-b33d-bf4482671cb9)
+![Screenshot_20240629_203422](https://github.com/mubahilahmad/animal_guessing_game/assets/171627590/5f9bbde9-d5ff-40b2-a5ae-b674088d0714)
